@@ -52,13 +52,15 @@ Requires:	%{name} = %{version}
 
 %description jogshuttle
 Jog/Shuttles are devices made especially for working with streams of
-data, such as Video or Audio. In theory, Kino should work with any 
-(usb) Jog/Shuttle devices that supports the USB HID v1.10 Pointer profile.
+data, such as Video or Audio. In theory, Kino should work with any
+(usb) Jog/Shuttle devices that supports the USB HID v1.10 Pointer
+profile.
 
 %description jogshuttle -l pl
-Urz±dzenia Jog/Shuttle s± specjalnie przystosowane do pracy ze strumieniami
-danych takimi jak d¼wiêk lub wideo. Teoretycznie, program Kino powinien
-pracowaæ z dowolnym urz±dzeniem Jog/Shuttle wspieraj±cym standard USB HID v1.10.
+Urz±dzenia Jog/Shuttle s± specjalnie przystosowane do pracy ze
+strumieniami danych takimi jak d¼wiêk lub wideo. Teoretycznie, program
+Kino powinien pracowaæ z dowolnym urz±dzeniem Jog/Shuttle wspieraj±cym
+standard USB HID v1.10.
 
 %prep
 %setup -q
@@ -69,8 +71,8 @@ pracowaæ z dowolnym urz±dzeniem Jog/Shuttle wspieraj±cym standard USB HID v1.10.
 %{__autoheader}
 %{__automake}
 %configure \
-    --with-hotplug-script-dir=%{_sysconfdir}/hotplug/usb \
-    --with-hotplug-usermap-dir=%{_libdir}/hotplug/%{name}
+	--with-hotplug-script-dir=%{_sysconfdir}/hotplug/usb \
+	--with-hotplug-usermap-dir=%{_libdir}/hotplug/%{name}
 %{__make}
 
 %install
