@@ -45,7 +45,8 @@ Development files for Kino plugins.
 Pliki dla programistów tworz±cych wtyczki Kina.
 
 %prep
-%setup -q
+#%setup -q
+%setup -q -n %{name}-0.7.0
 #%patch0 -p1
 
 %build
