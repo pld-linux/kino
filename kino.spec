@@ -1,12 +1,12 @@
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.7.4
+Version:	0.7.5
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://kino.schirmacher.de/filemanager/download/41/%{name}-%{version}.tar.gz
-# Source0-md5:	bea618e226812446960c94f2fbf8a331
+Source0:	http://kino.schirmacher.de/filemanager/download/42/%{name}-%{version}.tar.gz
+# Source0-md5:	592f90be63feb7e63940cedd68edcf79
 Patch0:		%{name}-desktop.patch
 URL:		http://kino.schirmacher.de/
 BuildRequires:	autoconf >= 2.52
