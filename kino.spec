@@ -4,7 +4,7 @@ Version:	0.6.4
 Release:	0.1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://kino.schirmacher.de/filemanager/download/6/%{name}-%{version}.tar.gz
 BuildRequires:	libavc1394-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
