@@ -1,4 +1,5 @@
 Summary:	DV editing utility
+Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.6.4
 Release:	0.1
@@ -11,12 +12,19 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kino is an DV non-linear editing utility.
 
+%description -l pl
+Kino to narzêdzie do nieliniowej edycji DV.
+
 %package devel
 Summary:	Development files
+Summary(pl):	Pliki dla programistów
 Group:		Applications/Multimedia
 
 %description devel
 Development files for kino.
+
+%description devel -l pl
+Pliki dla programistów u¿ywaj±cych kina.
 
 %prep
 %setup -q
@@ -29,16 +37,17 @@ Development files for kino.
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
+%find_lang %{name} --with-gnome
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_pixmapsdir}/kino/*
-%doc %{_datadir}/gnome/help/kino/C/*
-%doc %{_mandir}/man1/*
+%{_pixmapsdir}/kino
+%{_mandir}/man1/*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(655,root,root) %{_includedir}/kino/*
+%attr(655,root,root) %{_includedir}/kino
