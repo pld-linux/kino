@@ -57,6 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/*.xpm
+%dir %{_datadir}/%{name}/*.glade
 %dir %{_datadir}/%{name}/scripts
 %dir %{_datadir}/%{name}/scripts/exports
 
