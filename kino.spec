@@ -2,19 +2,28 @@ Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Multimedia
-URL:		http://kino.schirmacher.de/
 Source0:	http://kino.schirmacher.de/filemanager/download/17/%{name}-%{version}.tar.gz
 # Source0-md5:	7caac99c0ebe1d76b835d76137c1e7d7
+Patch0:		%{name}-system-samplerate.patch
+URL:		http://kino.schirmacher.de/
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	autoconf
-BuildRequires:	libavc1394-devel
-BuildRequires:	libglade2-devel
-BuildRequires:	libgnomeui-devel
-BuildRequires:	libdv-devel
+BuildRequires:	libavc1394-devel >= 0.4.1
+BuildRequires:	libdv-devel >= 0.98
+BuildRequires:	libglade2-devel >= 2.0
+BuildRequires:	libgnomeui-devel >= 2.0
+BuildRequires:	libsamplerate-devel >= 0.0.14
+BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig
+Requires:	libavc1394 >= 0.4.1
+Requires:	libdv >= 0.98
+Requires:	libglade2 >= 2.0
+Requires:	libgnomeui >= 2.0
+Requires:	libsamplerate >= 0.0.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,33 +33,32 @@ Kino is an DV non-linear editing utility.
 Kino to narzêdzie do nieliniowej edycji DV.
 
 %package devel
-Summary:	Development files
-Summary(pl):	Pliki dla programistów
+Summary:	Development files for Kino plugins
+Summary(pl):	Pliki dla programistów wtyczek Kina
 Group:		Applications/Multimedia
+Requires:	libstdc++-devel
 
 %description devel
-Development files for kino.
+Development files for Kino plugins.
 
 %description devel -l pl
-Pliki dla programistów u¿ywaj±cych kina.
+Pliki dla programistów tworz±cych wtyczki Kina.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
-cd libsamplerate
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-cd ..
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -62,15 +70,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_datadir}/%{name}/scripts/exports/*.sh
-#%{_pixmapsdir}/kino
 %{_mandir}/man1/*
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/*.xpm
-%dir %{_datadir}/%{name}/*.glade
-%dir %{_datadir}/%{name}/scripts
-%dir %{_datadir}/%{name}/scripts/exports
+%{_datadir}/%{name}/*.xpm
+%{_datadir}/%{name}/*.glade
+%attr(755,root,root) %{_datadir}/%{name}/scripts
 
 %files devel
 %defattr(644,root,root,755)
-%attr(655,root,root) %{_includedir}/kino
+%{_includedir}/kino
