@@ -6,6 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://kino.schirmacher.de/filemanager/download/6/%{name}-%{version}.tar.gz
+# Source0-md5:	f7e504c5f44a16bee106428690c860f2
 BuildRequires:	libavc1394-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
