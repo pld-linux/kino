@@ -1,12 +1,13 @@
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.7.1
+Version:	0.7.4
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://kino.schirmacher.de/filemanager/download/31/%{name}-%{version}.tar.gz
-# Source0-md5:	0980dd4ccf2d2282578f6bcb51d768e8
+Source0:	http://kino.schirmacher.de/filemanager/download/41/%{name}-%{version}.tar.gz
+# Source0-md5:	bea618e226812446960c94f2fbf8a331
+Patch0:		%{name}-desktop.patch
 URL:		http://kino.schirmacher.de/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -64,6 +65,7 @@ standard USB HID v1.10.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
@@ -102,6 +104,8 @@ hotplug-update-usb.usermap
 %{_datadir}/%{name}/*.jpeg
 %{_datadir}/%{name}/help
 %attr(755,root,root) %{_datadir}/%{name}/scripts
+%{_desktopdir}/*
+%{_pixmapsdir}/*
 
 %files devel
 %defattr(644,root,root,755)
