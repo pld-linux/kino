@@ -1,0 +1,42 @@
+--- kino-0.7.0/src/Makefile.am.orig	Fri Nov 21 14:29:19 2003
++++ kino-0.7.0/src/Makefile.am	Thu Jan 15 12:44:10 2004
+@@ -58,7 +58,7 @@
+ EXTRA_kino_SOURCES = cmd_ref.c
+ 
+ kino_LDADD = $(GNOME2_LIBS) $(AVCODEC_LIBS) \
+-             ../libsamplerate/src/libsamplerate.a
++             -lsamplerate
+ 
+ INCLUDES = -Wall \
+ 	$(GNOME2_CFLAGS) \
+--- kino-0.7.0/src/frame.h.orig	Tue Nov 25 21:51:15 2003
++++ kino-0.7.0/src/frame.h	Thu Jan 15 12:44:43 2004
+@@ -28,7 +28,7 @@
+ #include <string>
+ using std::string;
+ 
+-#include "libsamplerate/src/samplerate.h"
++#include <samplerate.h>
+ 
+ #ifdef WITH_LIBDV
+ #include <libdv/dv.h>
+--- kino-0.7.0/configure.in.orig	Sun Dec 14 17:27:54 2003
++++ kino-0.7.0/configure.in	Thu Jan 15 12:43:13 2004
+@@ -8,7 +8,6 @@
+ AC_CONFIG_SRCDIR(src/main.c)
+ AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+ AM_CONFIG_HEADER(config.h)
+-AC_CONFIG_SUBDIRS(libsamplerate)
+ AM_MAINTAINER_MODE
+ 
+ # ######################################################################
+--- kino-0.7.0/Makefile.am.orig	Mon Dec 15 22:31:37 2003
++++ kino-0.7.0/Makefile.am	Thu Jan 15 12:43:23 2004
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = po libsamplerate src help scripts
++SUBDIRS = po src help scripts
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure config.h.in
+ #ACLOCAL_AMFLAGS = -I m4
+ 
