@@ -41,6 +41,11 @@ Pliki dla programistów u¿ywaj±cych kina.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+cd libsamplerate
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+cd ..
 %configure
 %{__make}
 
