@@ -1,14 +1,18 @@
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.6.4
+Version:	0.7.0
 Release:	0.1
 License:	GPL
 Group:		Applications/Multimedia
 URL:		http://kino.schirmacher.de/
-Source0:	http://kino.schirmacher.de/filemanager/download/6/%{name}-%{version}.tar.gz
-# Source0-md5:	f7e504c5f44a16bee106428690c860f2
+Source0:	http://kino.schirmacher.de/filemanager/download/17/%{name}-%{version}.tar.gz
+# Source0-md5:	7caac99c0ebe1d76b835d76137c1e7d7
 BuildRequires:	libavc1394-devel
+BuildRequires:	libglade2-devel
+BuildRequires:	libgnomeui-devel
+BuildRequires:	libdv-devel
+BuildRequires:	libxml2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +41,8 @@ Pliki dla programistów u¿ywaj±cych kina.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome
 
@@ -47,8 +52,13 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/kino
+%attr(644,root,root,755) %{_datadir}/%{name}/scripts/exports/*.sh
+#%{_pixmapsdir}/kino
 %{_mandir}/man1/*
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/*.xpm
+%dir %{_datadir}/%{name}/scripts
+%dir %{_datadir}/%{name}/scripts/exports
 
 %files devel
 %defattr(644,root,root,755)
