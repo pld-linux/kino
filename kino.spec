@@ -98,6 +98,7 @@ hotplug-update-usb.usermap
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.xpm
 %{_datadir}/%{name}/*.glade
 %{_datadir}/%{name}/*.png
