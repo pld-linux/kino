@@ -8,6 +8,8 @@ Group:		Applications/Multimedia
 URL:		http://kino.schirmacher.de/
 Source0:	http://kino.schirmacher.de/filemanager/download/17/%{name}-%{version}.tar.gz
 # Source0-md5:	7caac99c0ebe1d76b835d76137c1e7d7
+BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRequires:	libavc1394-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel
@@ -36,6 +38,9 @@ Pliki dla programistów u¿ywaj±cych kina.
 %setup -q
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
@@ -52,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_datadir}/%{name}/scripts/exports/*.sh
+%attr(755,root,root) %{_datadir}/%{name}/scripts/exports/*.sh
 #%{_pixmapsdir}/kino
 %{_mandir}/man1/*
 %dir %{_datadir}/%{name}
