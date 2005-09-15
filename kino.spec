@@ -1,12 +1,12 @@
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.7.5
+Version:	0.7.6
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://kino.schirmacher.de/filemanager/download/42/%{name}-%{version}.tar.gz
-# Source0-md5:	592f90be63feb7e63940cedd68edcf79
+Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
+# Source0-md5:	c1fa929096f5a754455f5a3dd33dd203
 Patch0:		%{name}-desktop.patch
 URL:		http://kino.schirmacher.de/
 BuildRequires:	autoconf >= 2.52
@@ -19,6 +19,7 @@ BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
+Requires(post,postun):  shared-mime-info
 Requires:	libavc1394 >= 0.4.1
 Requires:	libdv >= 0.102
 Requires:	libglade2 >= 2.0
@@ -88,6 +89,16 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+umask 022
+update-mime-database %{_datadir}/mime >/dev/null 2>&1 ||:
+[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1 ||:
+
+%postun
+umask 022                                                                                          
+update-mime-database %{_datadir}/mime >/dev/null 2>&1
+[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
+
 %post jogshuttle 
 hotplug-update-usb.usermap
 
@@ -105,6 +116,7 @@ hotplug-update-usb.usermap
 %{_datadir}/%{name}/*.jpeg
 %{_datadir}/%{name}/help
 %attr(755,root,root) %{_datadir}/%{name}/scripts
+%{_datadir}/mime/packages/*.xml
 %{_desktopdir}/*
 %{_pixmapsdir}/*
 
