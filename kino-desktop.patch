@@ -1,65 +1,27 @@
-diff -urN kino-0.7.4.orig/kino.desktop kino-0.7.4/kino.desktop
---- kino-0.7.4.orig/kino.desktop	2004-10-03 14:57:19.227990544 +0200
-+++ kino-0.7.4/kino.desktop	2004-10-03 15:15:33.024708168 +0200
-@@ -1,50 +1,26 @@
- [Desktop Entry]
--Name=Kino Video Editor
--Name[cs]=Kino Videa Editor
--Name[da]=Kino Videoredigering
--Name[de]=
--Name[el]=Επεξεργαστής Βίντεο
--Name[es]=Kino Video Editor
--Name[fr]=Kino Montage vido
--Name[is]=
--Name[it]=
--Name[ja]=
--Name[ko]=
--Name[ms]=
--Name[nl]=
--Name[no]=
--Name[pt]=
--Name[ru]=
--Name[sv]=Kino Videoredigering
--Name[tr]=
--Name[zh_CN]=
--Name[zh_TW]=
-+Name=Kino
-+GenericName=Video Editor
-+GenericName[cs]=Videa Editor
-+GenericName[da]=Videoredigering
-+GenericName[el]=Επεξεργαστής Βίντεο
-+GenericName[es]=Video Editor
-+GenericName[fr]=Montage vido
-+GenericName[pl]=Edytor wideo
-+GenericName[sv]=Videoredigering
- Comment=Edit DV video
- Comment[cs]=Upravit DV videa
- Comment[da]=Rediger DV video
--Comment[de]=
- Comment[el]=Επεξεργαστής Βίντεο
- Comment[es]=Editar DV video
+diff -aurN kino-0.7.6.orig/Kino.desktop kino-0.7.6/Kino.desktop
+--- kino-0.7.6.orig/Kino.desktop	2005-05-18 22:11:31.000000000 +0200
++++ kino-0.7.6/Kino.desktop	2005-09-15 21:21:29.000000000 +0200
+@@ -9,6 +9,7 @@
+ Name[eu]=Kino, bideo-editorea
+ Name[fr]=Kino Montage vido
+ Name[it]=Kino Editor Video
++Name[pl]=Kino - edytor wideo
+ Name[sv]=Kino Videoredigering
+ Name[nb]=Kino videoredigering
+ Name[no]=Kino videoredigerer
+@@ -22,6 +23,7 @@
+ Comment[eu]=Editatu DV bideoak
  Comment[fr]=Montage vido DV
--Comment[is]=
--Comment[it]=
--Comment[ja]=
--Comment[ko]=
--Comment[ms]=
--Comment[nl]=
--Comment[no]=
--Comment[pt]=
--Comment[ru]=
+ Comment[it]=Montaggio Video DV non lineare
++Comment[pl]=Narz�dzie do edycji DV
  Comment[sv]=Redigera DV video
--Comment[tr]=
--Comment[zh_CN]=
--Comment[zh_TW]=
-+Comment[pl]=Edycja DV wideo
- Encoding=UTF-8
- TryExec=kino
- Exec=kino %F
- Icon=kino.png
+ Comment[nb]=Redigering av DV video
+ Comment[no]=Redigere DV video
+@@ -32,6 +34,6 @@
  Terminal=false
+ StartupNotify=true
  Type=Application
 -Categories=Application;AudioVideo;
--GenericName=Video Editor
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
+ GenericName=Video Editor
  MimeType=video/dv;application/x-smil
