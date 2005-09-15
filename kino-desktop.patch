@@ -1,6 +1,6 @@
 diff -aurN kino-0.7.6.orig/Kino.desktop kino-0.7.6/Kino.desktop
 --- kino-0.7.6.orig/Kino.desktop	2005-05-18 22:11:31.000000000 +0200
-+++ kino-0.7.6/Kino.desktop	2005-09-15 21:21:29.000000000 +0200
++++ kino-0.7.6/Kino.desktop	2005-09-15 21:44:49.000000000 +0200
 @@ -9,6 +9,7 @@
  Name[eu]=Kino, bideo-editorea
  Name[fr]=Kino Montage vido
@@ -13,7 +13,7 @@ diff -aurN kino-0.7.6.orig/Kino.desktop kino-0.7.6/Kino.desktop
  Comment[eu]=Editatu DV bideoak
  Comment[fr]=Montage vido DV
  Comment[it]=Montaggio Video DV non lineare
-+Comment[pl]=Narzêdzie do edycji DV
++Comment[pl]=NarzÄ™dzie do edycji DV
  Comment[sv]=Redigera DV video
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
