@@ -1,23 +1,31 @@
 diff -aurN kino-0.7.6.orig/Kino.desktop kino-0.7.6/Kino.desktop
 --- kino-0.7.6.orig/Kino.desktop	2005-05-18 22:11:31.000000000 +0200
 +++ kino-0.7.6/Kino.desktop	2005-09-15 21:44:49.000000000 +0200
-@@ -9,6 +9,7 @@
+@@ -9,9 +9,9 @@
  Name[eu]=Kino, bideo-editorea
  Name[fr]=Kino Montage vido
  Name[it]=Kino Editor Video
-+Name[pl]=Kino - edytor wideo
- Name[sv]=Kino Videoredigering
+-Name[sv]=Kino Videoredigering
  Name[nb]=Kino videoredigering
- Name[no]=Kino videoredigerer
-@@ -22,6 +23,7 @@
+-Name[no]=Kino videoredigerer
++Name[pl]=Kino - edytor wideo
++Name[sv]=Kino Videoredigering
+ Comment=Edit DV video
+ Comment[ca]=Edita vídeos DV
+ Comment[cs]=Nástroj pro úpravy DV videa
+@@ -22,9 +22,9 @@
  Comment[eu]=Editatu DV bideoak
  Comment[fr]=Montage vido DV
  Comment[it]=Montaggio Video DV non lineare
-+Comment[pl]=Narzędzie do edycji DV
- Comment[sv]=Redigera DV video
+-Comment[sv]=Redigera DV video
  Comment[nb]=Redigering av DV video
- Comment[no]=Redigere DV video
-@@ -32,6 +34,6 @@
+-Comment[no]=Redigere DV video
++Comment[pl]=Narzędzie do edycji DV
++Comment[sv]=Redigera DV video
+ Encoding=UTF-8
+ TryExec=kino
+ Exec=kino %F
+@@ -32,6 +32,6 @@
  Terminal=false
  StartupNotify=true
  Type=Application
