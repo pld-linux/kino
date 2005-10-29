@@ -2,7 +2,7 @@ Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.7.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
@@ -83,6 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# it seems to be more Danish than Norwegian; current Norwegian is in nb
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --with-gnome
 
