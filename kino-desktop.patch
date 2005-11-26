@@ -1,35 +1,34 @@
-diff -aurN kino-0.7.6.orig/Kino.desktop kino-0.7.6/Kino.desktop
---- kino-0.7.6.orig/Kino.desktop	2005-05-18 22:11:31.000000000 +0200
-+++ kino-0.7.6/Kino.desktop	2005-09-15 21:44:49.000000000 +0200
-@@ -9,9 +9,9 @@
- Name[eu]=Kino, bideo-editorea
- Name[fr]=Kino Montage vido
- Name[it]=Kino Editor Video
--Name[sv]=Kino Videoredigering
- Name[nb]=Kino videoredigering
--Name[no]=Kino videoredigerer
-+Name[pl]=Kino - edytor wideo
-+Name[sv]=Kino Videoredigering
+diff -aurN kino-0.8.0.orig/Kino.desktop kino-0.8.0/Kino.desktop
+--- kino-0.8.0.orig/Kino.desktop	2005-11-12 18:54:46.000000000 +0100
++++ kino-0.8.0/Kino.desktop	2005-11-26 21:46:03.000000000 +0100
+@@ -10,9 +10,10 @@
+ GenericName[eu]=bideo-editorea
+ GenericName[fr]=Montage vido
+ GenericName[it]=Editor Video
+-GenericName[sv]=Videoredigering
+ GenericName[nb]=Videoredigering
+ GenericName[no]=Videoredigerer
++GenericName[pl]=Edytor video
++GenericName[sv]=Videoredigering
  Comment=Edit DV video
  Comment[ca]=Edita vídeos DV
  Comment[cs]=Nástroj pro úpravy DV videa
-@@ -22,9 +22,9 @@
+@@ -23,15 +24,15 @@
  Comment[eu]=Editatu DV bideoak
  Comment[fr]=Montage vido DV
  Comment[it]=Montaggio Video DV non lineare
 -Comment[sv]=Redigera DV video
  Comment[nb]=Redigering av DV video
--Comment[no]=Redigere DV video
+ Comment[no]=Redigere DV video
+-Encoding=UTF-8
 +Comment[pl]=Narzędzie do edycji DV
-+Comment[sv]=Redigera DV video
- Encoding=UTF-8
++Comment[sv]=Redigera DV videoEncoding=UTF-8
  TryExec=kino
  Exec=kino %F
-@@ -32,6 +32,6 @@
+ Icon=kino.png
  Terminal=false
  StartupNotify=true
  Type=Application
 -Categories=Application;AudioVideo;
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
- GenericName=Video Editor
  MimeType=video/dv;application/x-smil
