@@ -2,7 +2,7 @@ Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.8.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
@@ -68,6 +68,9 @@ standard USB HID v1.10.
 %prep
 %setup -q
 %patch0 -p1
+
+# use lib64 when needed
+sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
 
 %build
 %{__aclocal}
