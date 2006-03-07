@@ -8,7 +8,7 @@ Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
 # Source0-md5:	ec945365580d5e21431c76c07d0576bf
 Patch0:		%{name}-desktop.patch
-URL:		http://kino.schirmacher.de/
+URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2:2.6.0
