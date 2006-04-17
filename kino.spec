@@ -2,7 +2,7 @@ Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.8.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
