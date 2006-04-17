@@ -13,16 +13,16 @@ diff -aurN kino-0.8.0.orig/Kino.desktop kino-0.8.0/Kino.desktop
  Comment=Edit DV video
  Comment[ca]=Edita vídeos DV
  Comment[cs]=Nástroj pro úpravy DV videa
-@@ -23,15 +24,15 @@
+@@ -23,15 +24,16 @@
  Comment[eu]=Editatu DV bideoak
  Comment[fr]=Montage vido DV
  Comment[it]=Montaggio Video DV non lineare
 -Comment[sv]=Redigera DV video
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
--Encoding=UTF-8
 +Comment[pl]=Narzędzie do edycji DV
-+Comment[sv]=Redigera DV videoEncoding=UTF-8
++Comment[sv]=Redigera DV video
+ Encoding=UTF-8
  TryExec=kino
  Exec=kino %F
  Icon=kino.png
