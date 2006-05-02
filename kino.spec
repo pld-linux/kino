@@ -1,12 +1,12 @@
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.8.0
-Release:	3
+Version:	0.8.1
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
-# Source0-md5:	ec945365580d5e21431c76c07d0576bf
+# Source0-md5:	bd4fca3b879aaa91754fd2e0234db345
 Patch0:		%{name}-desktop.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
@@ -19,7 +19,7 @@ BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
-Requires(post,postun):  shared-mime-info
+Requires(post,postun):	shared-mime-info
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libavc1394 >= 0.4.1
 Requires:	libdv >= 0.102
@@ -50,8 +50,8 @@ Pliki dla programistów tworz±cych wtyczki Kina.
 Summary:	Kino support for jogshuttle input devices
 Summary(pl):	Obs³uga urz±dzeñ jogshuttle dla Kino
 Group:		Applications/Multimedia
-Requires:	hotplug
 Requires:	%{name} = %{version}
+Requires:	hotplug
 
 %description jogshuttle
 Jog/Shuttles are devices made especially for working with streams of
@@ -104,15 +104,15 @@ update-mime-database %{_datadir}/mime >/dev/null 2>&1 ||:
 
 %postun
 if [ $1 = 0 ]; then
-    umask 022
-    update-mime-database %{_datadir}/mime >/dev/null 2>&1
-    [ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
+	umask 022
+	update-mime-database %{_datadir}/mime >/dev/null 2>&1
+	[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
 fi
 
-%post jogshuttle 
+%post jogshuttle
 hotplug-update-usb.usermap
 
-%postun jogshuttle 
+%postun jogshuttle
 hotplug-update-usb.usermap
 
 %files -f %{name}.lang
