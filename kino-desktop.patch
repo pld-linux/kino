@@ -1,31 +1,22 @@
-diff -aurN kino-0.8.0.orig/Kino.desktop kino-0.8.0/Kino.desktop
---- kino-0.8.0.orig/Kino.desktop	2005-11-12 18:54:46.000000000 +0100
-+++ kino-0.8.0/Kino.desktop	2005-11-26 21:46:03.000000000 +0100
-@@ -10,9 +10,10 @@
- GenericName[eu]=bideo-editorea
- GenericName[fr]=Montage vido
+--- kino-0.8.1/Kino.desktop~	2006-05-02 20:47:49.000000000 +0300
++++ kino-0.8.1/Kino.desktop	2006-05-02 20:49:15.000000000 +0300
+@@ -12,6 +12,7 @@
+ GenericName[hu]=Videoszerkesztő
  GenericName[it]=Editor Video
--GenericName[sv]=Videoredigering
+ GenericName[sv]=Videoredigering
++GenericName[pl]=Edytor video
  GenericName[nb]=Videoredigering
  GenericName[no]=Videoredigerer
-+GenericName[pl]=Edytor video
-+GenericName[sv]=Videoredigering
- Comment=Edit DV video
- Comment[ca]=Edita vídeos DV
- Comment[cs]=Nástroj pro úpravy DV videa
-@@ -23,15 +24,16 @@
- Comment[eu]=Editatu DV bideoak
- Comment[fr]=Montage vido DV
+ GenericName[ru]=Видеоредактор
+@@ -27,6 +28,7 @@
+ Comment[hu]=DV videók szerkesztése
  Comment[it]=Montaggio Video DV non lineare
--Comment[sv]=Redigera DV video
+ Comment[sv]=Redigera DV video
++Comment[pl]=Narzędzie do edycji DV
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
-+Comment[pl]=Narzędzie do edycji DV
-+Comment[sv]=Redigera DV video
- Encoding=UTF-8
- TryExec=kino
- Exec=kino %F
- Icon=kino.png
+ Comment[ru]=Редактирование DV видео
+@@ -37,5 +39,5 @@
  Terminal=false
  StartupNotify=true
  Type=Application
