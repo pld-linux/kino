@@ -8,6 +8,10 @@ Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
 # Source0-md5:	bd4fca3b879aaa91754fd2e0234db345
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-segfault_empty_chapter.patch
+Patch2:		%{name}-fix_avi_packing.patch
+Patch3:		%{name}-fix_no_mplex.patch
+Patch4:		%{name}-fix_bigendian_warning.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -68,6 +72,10 @@ standard USB HID v1.10.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 # use lib64 when needed
 sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
