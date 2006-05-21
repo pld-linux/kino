@@ -1,6 +1,11 @@
 --- kino-0.8.1/Kino.desktop~	2006-05-02 20:47:49.000000000 +0300
 +++ kino-0.8.1/Kino.desktop	2006-05-02 20:49:15.000000000 +0300
-@@ -12,6 +12,7 @@
+@@ -8,10 +8,11 @@
+ GenericName[el]=Επεξεργαστής Βίντεο
+ GenericName[es]=Editor de vídeo
+ GenericName[eu]=bideo-editorea
+-GenericName[fr]=Montage vido
++GenericName[fr]=Montage vidéo
  GenericName[hu]=Videoszerkesztő
  GenericName[it]=Editor Video
  GenericName[sv]=Videoredigering
@@ -8,17 +13,21 @@
  GenericName[nb]=Videoredigering
  GenericName[no]=Videoredigerer
  GenericName[ru]=Видеоредактор
-@@ -27,6 +28,7 @@
+@@ -22,11 +23,12 @@
+ Comment[el]=Επεξεργαστής Βίντεο
+ Comment[es]=Editar vídeos DV
+ Comment[eu]=Editatu DV bideoak
+-Comment[fr]=Montage vido DV
++Comment[fr]=Montage vidéo DV
  Comment[hu]=DV videók szerkesztése
  Comment[it]=Montaggio Video DV non lineare
+ Comment[sv]=Redigera DV video
  Comment[sv]=Redigera DV video
 +Comment[pl]=Narzędzie do edycji DV
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
  Comment[ru]=Редактирование DV видео
-@@ -37,5 +39,5 @@
- Terminal=false
- StartupNotify=true
+@@ -39,3 +41,3 @@
  Type=Application
 -Categories=Application;AudioVideo;
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
