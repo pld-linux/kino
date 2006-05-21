@@ -1,0 +1,18 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## Paul Brossier <piem@debian.org>
+## DP: fix unused variable on bigendian arch 
+
+@DPATCH@
+--- kino-0.76.orig/src/page_export_avi.cc
++++ kino-0.76/src/page_export_avi.cc
+@@ -213,8 +213,10 @@
+ 		time_t datetime = time( NULL );
+ 		int frameNum = 0;
+ 		int i;
++#if BYTE_ORDER == LITTLE_ENDIAN
+ 		bool resample = gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON(
+ 		                    lookup_widget( common->getWidget(), "checkbutton_export_avi_resample" ) ) );
++#endif
+ 		int16_t *audio_buffers[ 4 ];
+ 		AudioInfo info;
+ 		AudioResample<int16_ne_t,int16_le_t> *resampler = NULL;

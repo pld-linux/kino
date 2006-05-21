@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## Paul Brossier <piem@debian.org>
+## DP: fix segfault when no multiplex tool is set 
+
+@DPATCH@
+--- kino-0.7.6/src/page_export_mjpeg.cc	2005-04-02 00:02:00.000000000 +0100
++++ kino-0.76/src/page_export_mjpeg.cc	2005-07-21 17:33:26.000000000 +0100
+@@ -277,7 +277,10 @@
+ 		gchar *full;
+ 		char sceneString[ 20 ];
+ 		int sceneEnd = end;
+-		bool userMplexSplit = ( strstr( multiplex, "-S" ) || strstr( multiplex, "--max-segment-size" ) );
++		bool userMplexSplit = 0;
++                if ( multiplex != NULL && strcmp( multiplex, "" ) )
++                        userMplexSplit =  (strstr( multiplex, "-S" ) 
++                                        || strstr( multiplex, "--max-segment-size" ));
+ 
+ 		// Determine if we need to split by scene or not
+ 		// when splitting: Output is generated as fileNNN_MMM.mpeg where NNN is the
