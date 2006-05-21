@@ -1,3 +1,5 @@
+# TODO
+# - fix ppc and alpha build
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
@@ -54,7 +56,7 @@ Pliki dla programistów tworz±cych wtyczki Kina.
 Summary:	Kino support for jogshuttle input devices
 Summary(pl):	Obs³uga urz±dzeñ jogshuttle dla Kino
 Group:		Applications/Multimedia
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	hotplug
 
 %description jogshuttle
