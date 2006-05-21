@@ -13,7 +13,7 @@
  GenericName[nb]=Videoredigering
  GenericName[no]=Videoredigerer
  GenericName[ru]=Видеоредактор
-@@ -22,11 +23,12 @@
+@@ -23,10 +24,11 @@
  Comment[el]=Επεξεργαστής Βίντεο
  Comment[es]=Editar vídeos DV
  Comment[eu]=Editatu DV bideoak
@@ -22,12 +22,13 @@
  Comment[hu]=DV videók szerkesztése
  Comment[it]=Montaggio Video DV non lineare
  Comment[sv]=Redigera DV video
- Comment[sv]=Redigera DV video
 +Comment[pl]=Narzędzie do edycji DV
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
  Comment[ru]=Редактирование DV видео
-@@ -39,3 +41,3 @@
+@@ -37,5 +39,5 @@
+ Terminal=false
+ StartupNotify=true
  Type=Application
 -Categories=Application;AudioVideo;
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
