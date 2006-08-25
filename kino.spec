@@ -34,7 +34,7 @@ Requires:	libdv >= 0.102
 Requires:	libglade2 >= 2.5
 Requires:	libsamplerate >= 0.0.14
 Requires:	shared-mime-info
-ExcludeArch:	alpha ppc
+ExcludeArch:	ppc sparc sparcv9 sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define                filterout_ld    -Wl,--as-needed
