@@ -1,5 +1,5 @@
 # TODO
-# - fix ppc and alpha build
+# - fix build on big-endians
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
