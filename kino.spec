@@ -26,6 +26,7 @@ BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.315
 Requires(post,postun):	shared-mime-info
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libavc1394 >= 0.4.1
