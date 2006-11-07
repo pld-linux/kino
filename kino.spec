@@ -146,7 +146,7 @@ hotplug-update-usb.usermap
 %{_datadir}/%{name}/help
 %attr(755,root,root) %{_datadir}/%{name}/scripts
 %{_datadir}/mime/packages/*.xml
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 
 %files devel
