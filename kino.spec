@@ -1,30 +1,31 @@
 # TODO
-# - fix ppc and alpha build
+# - fix build on big-endians
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
-Version:	0.8.1
-Release:	2
+Version:	0.9.3
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
-# Source0-md5:	bd4fca3b879aaa91754fd2e0234db345
+# Source0-md5:	5ba8e3ab848eee39391c49f17b8cf226
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-segfault_empty_chapter.patch
-Patch2:		%{name}-fix_avi_packing.patch
-Patch3:		%{name}-fix_no_mplex.patch
-Patch4:		%{name}-fix_bigendian_warning.patch
+Patch1:		%{name}-fix_avi_packing.patch
+Patch2:		%{name}-fix_bigendian_warning.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	intltool
 BuildRequires:	libavc1394-devel >= 0.4.1
 BuildRequires:	libdv-devel >= 0.102
+BuildRequires:	libiec61883-devel
 BuildRequires:	libglade2-devel >= 2.5
 BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.315
 Requires(post,postun):	shared-mime-info
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libavc1394 >= 0.4.1
@@ -32,7 +33,10 @@ Requires:	libdv >= 0.102
 Requires:	libglade2 >= 2.5
 Requires:	libsamplerate >= 0.0.14
 Requires:	shared-mime-info
+ExcludeArch:	ppc sparc sparcv9 sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define                filterout_ld    -Wl,--as-needed
 
 %description
 Kino is an DV non-linear editing utility.
@@ -76,13 +80,12 @@ standard USB HID v1.10.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 # use lib64 when needed
 sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
 
 %build
+%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -141,7 +144,7 @@ hotplug-update-usb.usermap
 %{_datadir}/%{name}/help
 %attr(755,root,root) %{_datadir}/%{name}/scripts
 %{_datadir}/mime/packages/*.xml
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 
 %files devel
