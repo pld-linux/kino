@@ -1,0 +1,18 @@
+--- src/Makefile.am.org	2007-01-13 21:18:41.315241250 +0100
++++ src/Makefile.am	2007-01-13 21:19:07.696890000 +0100
+@@ -76,6 +76,7 @@
+ 	$(LIBXML2_LIBS) \
+ 	$(GTK2_LIBS) \
+ 	$(AVCODEC_LIBS) \
++	$(SWSCALE_LIBS) \
+ 	$(SRC_LIBS) \
+ 	cell-renderers/libcellrenderers.a
+ 
+@@ -91,6 +92,7 @@
+ 	$(LIBXML2_CFLAGS) \
+ 	$(GTK2_CFLAGS) \
+ 	$(AVCODEC_CFLAGS) \
++	$(SWSCALE_CFLAGS) \
+ 	$(SRC_CFLAGS) \
+ 	-D_FILE_OFFSET_BITS=64 \
+ 	-DKINO_PLUGINDIR=\""$(pkglibdir)-gtk2"\" \
