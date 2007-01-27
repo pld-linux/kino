@@ -1,8 +1,12 @@
+#
+# TODO: fix as-needed
+#
+%bcond_with	jogshuttle
 Summary:	DV editing utility
 Summary(pl):	Narzêdzie do edycji DV
 Name:		kino
 Version:	0.9.4
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
@@ -150,8 +154,10 @@ hotplug-update-usb.usermap
 %defattr(644,root,root,755)
 %{_includedir}/kino
 
+%if %{with jogshuttle}
 %files jogshuttle
 %defattr(644,root,root,755)
 %doc README_jogshuttle
 %attr(755,root,root) %{_sysconfdir}/hotplug/usb/*
 %{_libdir}/hotplug/kino
+%endif
