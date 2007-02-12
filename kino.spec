@@ -3,7 +3,7 @@
 #
 %bcond_with	jogshuttle
 Summary:	DV editing utility
-Summary(pl):	Narzêdzie do edycji DV
+Summary(pl.UTF-8):   NarzÄ™dzie do edycji DV
 Name:		kino
 Version:	0.9.4
 Release:	3
@@ -43,24 +43,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kino is an DV non-linear editing utility.
 
-%description -l pl
-Kino to narzêdzie do nieliniowej edycji DV.
+%description -l pl.UTF-8
+Kino to narzÄ™dzie do nieliniowej edycji DV.
 
 %package devel
 Summary:	Development files for Kino plugins
-Summary(pl):	Pliki dla programistów wtyczek Kina
+Summary(pl.UTF-8):   Pliki dla programistÃ³w wtyczek Kina
 Group:		Applications/Multimedia
 Requires:	libstdc++-devel
 
 %description devel
 Development files for Kino plugins.
 
-%description devel -l pl
-Pliki dla programistów tworz±cych wtyczki Kina.
+%description devel -l pl.UTF-8
+Pliki dla programistÃ³w tworzÄ…cych wtyczki Kina.
 
 %package jogshuttle
 Summary:	Kino support for jogshuttle input devices
-Summary(pl):	Obs³uga urz±dzeñ jogshuttle dla Kino
+Summary(pl.UTF-8):   ObsÅ‚uga urzÄ…dzeÅ„ jogshuttle dla Kino
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 Requires:	hotplug
@@ -71,10 +71,10 @@ data, such as Video or Audio. In theory, Kino should work with any
 (usb) Jog/Shuttle devices that supports the USB HID v1.10 Pointer
 profile.
 
-%description jogshuttle -l pl
-Urz±dzenia Jog/Shuttle s± specjalnie przystosowane do pracy ze
-strumieniami danych takimi jak d¼wiêk lub wideo. Teoretycznie, program
-Kino powinien pracowaæ z dowolnym urz±dzeniem Jog/Shuttle wspieraj±cym
+%description jogshuttle -l pl.UTF-8
+UrzÄ…dzenia Jog/Shuttle sÄ… specjalnie przystosowane do pracy ze
+strumieniami danych takimi jak dÅºwiÄ™k lub wideo. Teoretycznie, program
+Kino powinien pracowaÄ‡ z dowolnym urzÄ…dzeniem Jog/Shuttle wspierajÄ…cym
 standard USB HID v1.10.
 
 %prep
