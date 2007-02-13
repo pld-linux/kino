@@ -3,7 +3,7 @@
 #
 %bcond_with	jogshuttle
 Summary:	DV editing utility
-Summary(pl.UTF-8):   Narzędzie do edycji DV
+Summary(pl.UTF-8):	Narzędzie do edycji DV
 Name:		kino
 Version:	0.9.4
 Release:	3
@@ -48,7 +48,7 @@ Kino to narzędzie do nieliniowej edycji DV.
 
 %package devel
 Summary:	Development files for Kino plugins
-Summary(pl.UTF-8):   Pliki dla programistów wtyczek Kina
+Summary(pl.UTF-8):	Pliki dla programistów wtyczek Kina
 Group:		Applications/Multimedia
 Requires:	libstdc++-devel
 
@@ -60,7 +60,7 @@ Pliki dla programistów tworzących wtyczki Kina.
 
 %package jogshuttle
 Summary:	Kino support for jogshuttle input devices
-Summary(pl.UTF-8):   Obsługa urządzeń jogshuttle dla Kino
+Summary(pl.UTF-8):	Obsługa urządzeń jogshuttle dla Kino
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 Requires:	hotplug
