@@ -104,11 +104,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#broken symlink, create it manually:
-rm $RPM_BUILD_ROOT%{_bindir}/kino2raw
-cd $RPM_BUILD_ROOT%{_bindir}
-ln -s kino kino2raw 
-cd -
+# broken symlink, create it manually:
+ln -sf kino $RPM_BUILD_ROOT%{_bindir}/kino2raw
 # it seems to be more Danish than Norwegian; current Norwegian is in nb
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -f $RPM_BUILD_ROOT%{_libdir}/kino-gtk2/*.{a,la}
