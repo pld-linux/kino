@@ -1,5 +1,12 @@
-#
-# TODO: fix as-needed
+# TODO
+# - fix as-needed
+# - ppc/sparc broken:
+#page_export_avi.cc: In member function `virtual export_result
+#   ExportAVI::doExport(PlayList*, int, int, int, bool)':
+#page_export_avi.cc:244: error: `resample' undeclared (first use this function)
+#page_export_avi.cc:244: error: (Each undeclared identifier is reported only
+#   once for each function it appears in.)
+#make[3]: *** [page_export_avi.o] Error 1
 #
 %bcond_with	jogshuttle
 Summary:	DV editing utility
