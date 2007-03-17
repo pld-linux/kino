@@ -1,5 +1,5 @@
---- kino-0.8.1/Kino.desktop~	2006-05-02 20:47:49.000000000 +0300
-+++ kino-0.8.1/Kino.desktop	2006-05-02 20:49:15.000000000 +0300
+--- Kino.desktop.orig	2007-02-22 08:35:13.000000000 +0100
++++ Kino.desktop	2007-03-17 12:19:09.000000000 +0100
 @@ -8,10 +8,11 @@
  GenericName[el]=Επεξεργαστής Βίντεο
  GenericName[es]=Editor de vídeo
@@ -32,4 +32,4 @@
  Type=Application
 -Categories=Application;AudioVideo;
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
- MimeType=video/dv;application/x-smil
+ MimeType=video/dv;application/smil
