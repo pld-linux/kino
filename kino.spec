@@ -5,16 +5,15 @@
 Summary:	DV editing utility
 Summary(pl.UTF-8):	Narzędzie do edycji DV
 Name:		kino
-Version:	0.9.4
-Release:	3
+Version:	1.0.0
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
-# Source0-md5:	7afb36c0c6d803b6d890ea5d3913bf0a
+# Source0-md5:	8af99b09f044c210382ad63b63ca9268
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-fix_avi_packing.patch
 Patch2:		%{name}-fix_bigendian_warning.patch
-Patch3:		%{name}-swscale.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -79,10 +78,9 @@ standard USB HID v1.10.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p0
 %patch1 -p1
-%patch2 -p1
-%patch3 -p0
+%patch2 -p0
 
 # use lib64 when needed
 sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
@@ -94,8 +92,10 @@ sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-hotplug-script-dir=%{_sysconfdir}/hotplug/usb \
-	--with-hotplug-usermap-dir=%{_libdir}/hotplug/%{name}
+	--with-x \
+	--with-libdv-only \
+	--disable-local-ffmpeg \
+	--enable-udev-rules-dir=%{_sysconfdir}/udev/rules.d
 %{__make}
 
 %install
@@ -104,6 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+#broken symlink, create it manually:
+rm $RPM_BUILD_ROOT%{_bindir}/kino2raw
+cd $RPM_BUILD_ROOT%{_bindir}
+ln -s kino kino2raw 
+cd -
 # it seems to be more Danish than Norwegian; current Norwegian is in nb
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -f $RPM_BUILD_ROOT%{_libdir}/kino-gtk2/*.{a,la}
@@ -124,12 +129,6 @@ if [ $1 = 0 ]; then
 	update-mime-database %{_datadir}/mime >/dev/null 2>&1
 	[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
 fi
-
-%post jogshuttle
-hotplug-update-usb.usermap
-
-%postun jogshuttle
-hotplug-update-usb.usermap
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -158,6 +157,5 @@ hotplug-update-usb.usermap
 %files jogshuttle
 %defattr(644,root,root,755)
 %doc README_jogshuttle
-%attr(755,root,root) %{_sysconfdir}/hotplug/usb/*
-%{_libdir}/hotplug/kino
+%attr(755,root,root) %{_sysconfdir}/udev/rules.d/kino.rules
 %endif
