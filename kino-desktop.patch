@@ -1,11 +1,6 @@
---- Kino.desktop.orig	2007-02-22 08:35:13.000000000 +0100
-+++ Kino.desktop	2007-03-17 12:19:09.000000000 +0100
-@@ -8,10 +8,11 @@
- GenericName[el]=Επεξεργαστής Βίντεο
- GenericName[es]=Editor de vídeo
- GenericName[eu]=bideo-editorea
--GenericName[fr]=Montage vido
-+GenericName[fr]=Montage vidéo
+--- Kino.desktop.orig	2007-12-29 19:33:05.000000000 +0100
++++ Kino.desktop	2007-12-29 19:34:51.000000000 +0100
+@@ -12,6 +12,7 @@
  GenericName[hu]=Videoszerkesztő
  GenericName[it]=Editor Video
  GenericName[sv]=Videoredigering
@@ -13,12 +8,7 @@
  GenericName[nb]=Videoredigering
  GenericName[no]=Videoredigerer
  GenericName[ru]=Видеоредактор
-@@ -23,10 +24,11 @@
- Comment[el]=Επεξεργαστής Βίντεο
- Comment[es]=Editar vídeos DV
- Comment[eu]=Editatu DV bideoak
--Comment[fr]=Montage vido DV
-+Comment[fr]=Montage vidéo DV
+@@ -27,6 +28,7 @@
  Comment[hu]=DV videók szerkesztése
  Comment[it]=Montaggio Video DV non lineare
  Comment[sv]=Redigera DV video
