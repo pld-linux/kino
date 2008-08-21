@@ -41,9 +41,12 @@ Requires:	libdv >= 0.102
 Requires:	libglade2 >= 2.5
 Requires:	libsamplerate >= 0.0.14
 Requires:	shared-mime-info
+Suggests:	dvdauthor
+Suggests:	ffmpeg
+Suggests:	qdvdauthor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define                filterout_ld    -Wl,--as-needed
+%define		filterout_ld	-Wl,--as-needed
 
 %description
 Kino is an DV non-linear editing utility.
