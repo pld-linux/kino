@@ -12,12 +12,12 @@
 Summary:	DV editing utility
 Summary(pl.UTF-8):	Narzędzie do edycji DV
 Name:		kino
-Version:	1.3.1
-Release:	2
+Version:	1.3.2
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kino/%{name}-%{version}.tar.gz
-# Source0-md5:	b1f734e78b447b8ba1aa4a3482527d67
+# Source0-md5:	c534c666ed0312c75c877eb1580b985c
 Patch0:		%{name}-desktop.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
