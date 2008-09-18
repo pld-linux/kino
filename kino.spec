@@ -93,6 +93,7 @@ standard USB HID v1.10.
 sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
 
 %build
+%{__libtoolize}
 %{__intltoolize}
 %{__aclocal}
 %{__autoconf}
