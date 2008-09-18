@@ -30,6 +30,7 @@ BuildRequires:	libiec61883-devel
 BuildRequires:	libglade2-devel >= 2.5
 BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.315
@@ -71,7 +72,7 @@ Summary:	Kino support for jogshuttle input devices
 Summary(pl.UTF-8):	Obsługa urządzeń jogshuttle dla Kino
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
-Requires:	hotplug
+Requires:	udev-core
 
 %description jogshuttle
 Jog/Shuttles are devices made especially for working with streams of
