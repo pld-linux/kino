@@ -1,14 +1,6 @@
 # TODO
 # - fix as-needed
-# - ppc/sparc broken:
-#page_export_avi.cc: In member function `virtual export_result
-#   ExportAVI::doExport(PlayList*, int, int, int, bool)':
-#page_export_avi.cc:244: error: `resample' undeclared (first use this function)
-#page_export_avi.cc:244: error: (Each undeclared identifier is reported only
-#   once for each function it appears in.)
-#make[3]: *** [page_export_avi.o] Error 1
 #
-%bcond_with	jogshuttle
 Summary:	DV editing utility
 Summary(pl.UTF-8):	Narzędzie do edycji DV
 Name:		kino
@@ -27,7 +19,7 @@ BuildRequires:	intltool
 BuildRequires:	libavc1394-devel >= 0.4.1
 BuildRequires:	libdv-devel >= 0.102
 BuildRequires:	libiec61883-devel
-BuildRequires:	libglade2-devel >= 2.5
+BuildRequires:	libglade2-devel >= 1:2.5
 BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -39,7 +31,7 @@ Requires(post,postun):	shared-mime-info
 Requires:	gtk+2 >= 2:2.6.0
 Requires:	libavc1394 >= 0.4.1
 Requires:	libdv >= 0.102
-Requires:	libglade2 >= 2.5
+Requires:	libglade2 >= 1:2.5
 Requires:	libsamplerate >= 0.0.14
 Requires:	shared-mime-info
 Suggests:	dvdauthor
@@ -154,15 +146,12 @@ fi
 %{_datadir}/mime/packages/*.xml
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
-/etc/udev/rules.d/kino.rules
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/kino
 
-%if %{with jogshuttle}
 %files jogshuttle
 %defattr(644,root,root,755)
 %doc README_jogshuttle
-%attr(755,root,root) %{_sysconfdir}/udev/rules.d/kino.rules
-%endif
+%attr(755,root,root) /etc/udev/rules.d/kino.rules
