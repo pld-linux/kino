@@ -1,25 +1,25 @@
---- Kino.desktop.orig	2007-12-29 19:33:05.000000000 +0100
-+++ Kino.desktop	2007-12-29 19:34:51.000000000 +0100
-@@ -12,6 +12,7 @@
- GenericName[hu]=Videoszerkesztő
- GenericName[it]=Editor Video
+--- Kino.desktop	2009-03-28 17:54:22.000000000 +0100
++++ Kino.desktop.new	2010-01-28 23:43:53.934366935 +0100
+@@ -16,6 +16,7 @@
  GenericName[sv]=Videoredigering
-+GenericName[pl]=Edytor video
  GenericName[nb]=Videoredigering
  GenericName[no]=Videoredigerer
++GenericName[pl]=Edytor video
  GenericName[ru]=Видеоредактор
-@@ -27,6 +28,7 @@
- Comment[hu]=DV videók szerkesztése
- Comment[it]=Montaggio Video DV non lineare
+ GenericName[tt]=Видеоредактор
+ GenericName[uk]=Відеоредактор
+@@ -35,6 +36,7 @@
  Comment[sv]=Redigera DV video
-+Comment[pl]=Narzędzie do edycji DV
  Comment[nb]=Redigering av DV video
  Comment[no]=Redigere DV video
- Comment[ru]=Редактирование DV видео
-@@ -37,5 +39,5 @@
++Comment[pl]=Narzędzie do edycji DV
+ Comment[ru]=Редактирование DV-видео
+ Comment[tt]=DV видео редакторлау
+ Comment[uk]=Редагування DV відео
+@@ -45,5 +47,5 @@
  Terminal=false
  StartupNotify=true
  Type=Application
--Categories=Application;AudioVideo;
+-Categories=Application;AudioVideo;AudioVideoEditing;
 +Categories=GTK;GNOME;AudioVideo;AudioVideoEditing;
  MimeType=video/dv;application/smil
