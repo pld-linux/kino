@@ -14,12 +14,13 @@ Patch0:		%{name}-desktop.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	intltool
 BuildRequires:	libavc1394-devel >= 0.4.1
 BuildRequires:	libdv-devel >= 0.102
-BuildRequires:	libiec61883-devel
 BuildRequires:	libglade2-devel >= 1:2.5
+BuildRequires:	libiec61883-devel
 BuildRequires:	libsamplerate-devel >= 0.0.14
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
