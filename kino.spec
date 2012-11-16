@@ -5,7 +5,7 @@ Summary:	DV editing utility
 Summary(pl.UTF-8):	Narzędzie do edycji DV
 Name:		kino
 Version:	1.3.4
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/kino/%{name}-%{version}.tar.gz
@@ -13,6 +13,7 @@ Source0:	http://downloads.sourceforge.net/kino/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-1.3.4-libav-0.7.patch
 Patch2:		%{name}-1.3.4-v4l1.patch
+Patch3:		%{name}-format-security.patch
 URL:		http://www.kinodv.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -86,6 +87,7 @@ standard USB HID v1.10.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # use lib64 when needed
 sed -i -e 's|lib/kino-gtk2|%{_lib}/kino-gtk2|' src/*/Makefile.am
